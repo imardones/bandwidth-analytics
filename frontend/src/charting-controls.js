@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ChartStage from './chart-stage'
 import './charting-controls.scss';
 
-const BTN_LABEL = 'Load Diagonostics Chart'
-
 // Charting Controls
 //==============================================================================
 function ChartingControls() {
     const [charts, setCharts] = useState([]);
     const [chartSpecs, setChartSpecs] = useState({
-        device_uuid: 'cf4844bc-a107-4e0a-84e1-fa04d76d388c',
+        device_id: 'cf4844bc-a107-4e0a-84e1-fa04d76d388c',
         end_time: Date.now(),
         window_time: 60,
         num_windows: 10
@@ -39,15 +37,15 @@ function ChartingControls() {
     return (
         <div className='charting-controls'>
             <div className='charting-controls-widget'>
-                <h2>Bandwidth Diagonostics</h2>
+                <h2>Bandwidth Analytics</h2>
                 <form className='charting-controls-form'>
                     <span>
-                        <label htmlFor='device_uuid'>Device ID:</label>
+                        <label htmlFor='device_id large'>Device ID:</label>
                         <input 
                             className='charting-controls-input large'
                             type='text'
-                            name='device_uuid'
-                            value={chartSpecs.device_uuid}
+                            name='device_id'
+                            value={chartSpecs.device_id}
                             onChange={handleChange}/>
                     </span>
                     <span>
@@ -59,6 +57,8 @@ function ChartingControls() {
                             value={chartSpecs.end_time}
                             onChange={handleChange}/>
                     </span>
+
+
                     <span>
                         <label htmlFor='window_time'>Window Time (in seconds):</label>
                         <input 
@@ -79,15 +79,15 @@ function ChartingControls() {
                         </span>
                         <button 
                             className='charting-controls-button'
-                            name={BTN_LABEL}
+                            name="ADD"
                             onClick={addChart}
-                            >{BTN_LABEL}</button>
+                            >ADD</button>
 
                 </form>
                 
                 <div className='charts'>
 
-                    { charts.map((chart, index) => (
+                    { charts.map((chart, index ) => (
                         <ChartStage
                             key={index}
                             className='chart-stage'

@@ -7,14 +7,21 @@
         text-align: left;
         margin-right: 1vw;
         min-width: 240px;
+        margin: 0 1vw 0 0;
 
         .large {
         width: 300px;
         }
+
         .small {
         width: 100px;
         }
 
+    }
+
+    .btn-close {
+        float: left;
+        margin-left: 20px;
     }
 }
 

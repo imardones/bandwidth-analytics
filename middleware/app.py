@@ -36,14 +36,14 @@ def filterByVals(key, vals, dataset):
 
 @app.route('/', methods=['GET'])
 def parameters():
-    device_uuid = request.args.get('device_uuid', default='')
+    device_id = request.args.get('device_id', default='')
     end_time = int(request.args.get('end_time', default=time.time()))
     window_time = int(request.args.get('window_time', default=60))
     num_windows = int(request.args.get('num_windows', default=10))
     start_time = end_time - (num_windows * window_time)
     print('end_time: ') 
     print(end_time)
-    filteredList = filterByVals('device_id', device_uuid, data)
+    filteredList = filterByVals('device_id', device_id, data)
     filteredList = filterByVals('timestamp', [start_time, end_time], filteredList)
     bytes_fs, bytes_ts, end_time_labels = [], [], []
     bytes_fs = []
@@ -66,7 +66,7 @@ def parameters():
         i += 1
     print('length of result: ') 
     print(len(end_time_labels))
-    datapoints = { 'device_uuid': device_uuid, 'end_time': end_time, 'bytes_ts': bytes_ts, 'bytes_fs': bytes_fs, 'end_time_labels': end_time_labels }
+    datapoints = { 'device_id': device_id, 'end_time': end_time, 'bytes_ts': bytes_ts, 'bytes_fs': bytes_fs, 'end_time_labels': end_time_labels }
     return jsonify(datapoints)
 
 if __name__ == '__main__':

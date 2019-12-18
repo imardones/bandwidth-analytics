@@ -7,6 +7,7 @@ ADD . /usr/src/app
 RUN npm install -g -s --no-progress yarn && \
     yarn && \
     yarn run build && \
+    # yarn run watch && \
     yarn cache clean
 
 COPY . /usr/src/app

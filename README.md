@@ -29,13 +29,13 @@ bytes_fs
 device_id
 
 
-    device_uuid (required)
+    device_id (required)
     end_time (epoch timestamp of the last time we want to return, default now)
     window_time (window in seconds, default 60 seconds)
     num_windows (number of windows i.e., data points, to return, default 10)
     
     For example,
-    device_uuid = "abc", end_time = 1546300800, window_time = 60, num_windows = 10
+    device_id = "abc", end_time = 1546300800, window_time = 60, num_windows = 10
     would return 10 data points (timestamp, value) where each value would be the sum of bytes in that 60 second window, with the last window ending on 1546300800 (Jan 1st 2019 GMT).
 
 The format of the response of this call is up to you so long as it properly powers the component you'll build in part 2.
@@ -45,7 +45,7 @@ Using the JS framework of your choice (e.g. React, Vue) consume the API endpoint
 
 The API endpoint should accept 4 GET request parameters, allowing you to alter the chart window via address bar:
    ```
-   device_uuid (required)
+   device_id (required)
    end_time (optional, default now)
    window_time (optional, default 60)
    num_windows (optional, default 10)
