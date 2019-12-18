@@ -1,33 +1,29 @@
 # bandwidth-analytics
--Servers an API end-point using Python/Flask/Redis 
--Web Server to consume the endpoint for a widget using React/ChartJS
 
-## Installation
+Two parts: 
+A: Servers an API end-point using Python/Flask/Redis
+
+B: Web Server to consume the endpoint for a widget using React/ChartJS
+
+
+## Installation / Run
 docker-compose up
 
+Part A will run on:  http://localhost:3000/
+Part B will run on:  http://localhost:3000/
 
 
-# interview-platform-take-home
-Take-home test for platform development candidates
 
-This test should take about an hour, no more than two.
-
-### Resources
+### Requirements: 
 
 `bandwidths.py` - Listing of bandwidth entry for devices, values are "bytes_ts" (bytes to server) and "bytes_fs" (bytes from server)
 
-### Part 1
+#### Part A
 Using the Python framework of your choice (e.g. Flask, Django) create an API endpoint to display the data from `bandwidths.py`.
 
 The values for bandwidth should be aggregated by `window_time` (default 60 seconds) in order to limit the data we send to the front end and the number of points we display.
 
 *Parameters:*
-
-timestamp
-bytes_ts
-bytes_fs
-device_id
-
 
     device_id (required)
     end_time (epoch timestamp of the last time we want to return, default now)
@@ -40,7 +36,7 @@ device_id
 
 The format of the response of this call is up to you so long as it properly powers the component you'll build in part 2.
 
-### Part 2
+#### Part B
 Using the JS framework of your choice (e.g. React, Vue) consume the API endpoint you created in Part 1 and use it to render a chart using the charting library of your choice (e.g. FusionCharts, Chart.js).  This chart should consist of two lines - one for bandwidth to the server (`bytes_ts` in `bandwidths.py`) and one for bandwidth from the server (`bytes_fs` in `bandwidths.py`).
 
 The API endpoint should accept 4 GET request parameters, allowing you to alter the chart window via address bar:

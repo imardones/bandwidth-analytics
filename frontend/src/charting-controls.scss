@@ -12,7 +12,7 @@
   }
 
   h2 {
-    padding: 10px 0;
+    margin: 10px 0;
   }
 
   label {
@@ -40,28 +40,31 @@
     flex-wrap: wrap;
     justify-content: left;
 
-
-
   span {
     text-align: left;
+    padding: 15px 0 0 15px;
   }
+
 
   .charting-controls-input {
     width: 200px;
     clear: left;
     margin-right: 1vw;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 25px 0 0 0;
 
   }
+
   button {
-    border-radius: 10px;
+    border-radius: 6px;
     height: fit-content;
-    padding: 10px;
-    margin: 17px 20px 0 0;
+    margin: 25px 0 0 0;
   }
 
   .charting-controls-input.large {
     width: 300px;
-    margin: 0 1vw 0 20px;
   }
 
   .charting-controls-input.small {
@@ -86,15 +89,14 @@
     font-size: 12px;
     margin: 10px 0;
     color: #000;
-    
   }
 
   .chart-head {
     display: flex;
-    align-items: right;
     flex-wrap: wrap;
     padding: 10px;
-    justify-content: left;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .chart-body {

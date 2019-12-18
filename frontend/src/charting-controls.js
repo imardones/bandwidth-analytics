@@ -48,6 +48,7 @@ function ChartingControls() {
                             value={chartSpecs.device_id}
                             onChange={handleChange}/>
                     </span>
+
                     <span>
                         <label htmlFor='end_time'>End Time (timestamp):</label>
                         <input 
@@ -77,11 +78,13 @@ function ChartingControls() {
                                 value={chartSpecs.num_windows}
                                 onChange={handleChange}/>
                         </span>
+                        <span>
                         <button 
                             className='charting-controls-button'
                             name="ADD"
                             onClick={addChart}
                             >ADD</button>
+                        </span>
 
                 </form>
                 
