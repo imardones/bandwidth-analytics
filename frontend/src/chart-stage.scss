@@ -1,0 +1,21 @@
+.chart-stage {
+    .chart {
+    label {
+        font-size: 8pt;
+        color: #000;
+        display:block;
+        text-align: left;
+        margin-right: 1vw;
+        min-width: 240px;
+
+        .large {
+        width: 300px;
+        }
+        .small {
+        width: 100px;
+        }
+
+    }
+}
+
+}

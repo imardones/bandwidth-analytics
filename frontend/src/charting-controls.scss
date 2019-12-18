@@ -1,0 +1,99 @@
+.charting-controls {
+    padding: 30px;
+    max-width: 95vw;
+    height: 100vh;
+
+
+  .charting-controls-widget {
+    background: darkgrey;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  label {
+    font-size: 8pt;
+
+    display:block;
+    text-align: left;
+    margin-right: 1vw;
+    min-width: 240px;
+    padding-top: 10px;
+
+    .large {
+      width: 300px;
+    }
+    .small {
+      width: 100px;
+    }
+
+  }
+
+  .charting-controls form {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+
+
+
+  span {
+    text-align: left;
+  }
+
+  .charting-controls-input {
+    width: 200px;
+    clear: left;
+    margin-right: 1vw;
+
+  }
+  button {
+    border-radius: 10px;
+    height: fit-content;
+    padding: 10px;
+    margin-top: 17px;
+  }
+
+  .charting-controls-input.large {
+    width: 300px;
+  }
+
+  .charting-controls-input.small {
+    width: 100px;
+  }
+
+}
+
+  .charts {
+    display: flex;
+    flex-direction:  column-reverse;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  .chart {
+    clear: both;
+    background: #eaeaea;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    font-size: 12px;
+    margin: 10px 0;
+    color: #000;
+    
+  }
+
+  .chart-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: left;
+  }
+
+  .chart-body {
+    display: block;
+    clear: both;
+  }
+}

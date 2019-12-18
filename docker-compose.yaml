@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  api:
+    build:
+      context: ./middleware
+      dockerfile: dockerfile.middleware
+    command: flask run
+    ports:
+      - "5000:5000"
+
+  redis:
+    image: "redis:alpine"
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile.frontend
+    command: yarn start
+    ports:
+      - "3000:3000"
+
