@@ -36,69 +36,61 @@ function ChartingControls() {
 
     return (
         <div className='charting-controls'>
-            <div className='charting-controls-widget'>
-                <h2>Bandwidth Analytics</h2>
-                <form className='charting-controls-form'>
-                    <span>
-                        <label htmlFor='device_id large'>Device ID:</label>
-                        <input 
-                            className='charting-controls-input large'
-                            type='text'
-                            name='device_id'
-                            value={chartSpecs.device_id}
-                            onChange={handleChange}/>
+            <h2>Bandwidth Analytics</h2>
+            <form className='charting-controls-form'>
+                <span>
+                    <label htmlFor='device_id large'>Device ID:</label>
+                    <input 
+                        className='charting-controls-input large'
+                        type='text'
+                        name='device_id'
+                        value={chartSpecs.device_id}
+                        onChange={handleChange}/>
+                </span>
+                <span>
+                    <label htmlFor='end_time'>End Time (timestamp):</label>
+                    <input 
+                        className='charting-controls-input'
+                        type='text'
+                        name='end_time'
+                        value={chartSpecs.end_time}
+                        onChange={handleChange}/>
+                </span>
+                <span>
+                    <label htmlFor='window_time'>Window Time (in seconds):</label>
+                    <input 
+                        className='charting-controls-input small'
+                        type='number'
+                        name='window_time'
+                        value={chartSpecs.window_time}
+                        onChange={handleChange}/>
                     </span>
-
                     <span>
-                        <label htmlFor='end_time'>End Time (timestamp):</label>
-                        <input 
-                            className='charting-controls-input'
-                            type='text'
-                            name='end_time'
-                            value={chartSpecs.end_time}
-                            onChange={handleChange}/>
-                    </span>
-
-
-                    <span>
-                        <label htmlFor='window_time'>Window Time (in seconds):</label>
+                        <label fohtmlForr='num_windows'>Number of windows:</label>
                         <input 
                             className='charting-controls-input small'
                             type='number'
-                            name='window_time'
-                            value={chartSpecs.window_time}
+                            name='num_windows'
+                            value={chartSpecs.num_windows}
                             onChange={handleChange}/>
-                        </span>
-                        <span>
-                            <label fohtmlForr='num_windows'>Number of windows:</label>
-                            <input 
-                                className='charting-controls-input small'
-                                type='number'
-                                name='num_windows'
-                                value={chartSpecs.num_windows}
-                                onChange={handleChange}/>
-                        </span>
-                        <span>
-                        <button 
-                            className='charting-controls-button'
-                            name="ADD"
-                            onClick={addChart}
-                            >ADD</button>
-                        </span>
+                    </span>
+                    <span>
+                    <button 
+                        className='charting-controls-button'
+                        name="ADD"
+                        onClick={addChart}
+                        >ADD</button>
+                    </span>
 
-                </form>
-                
-                <div className='charts'>
-
-                    { charts.map((chart, index ) => (
-                        <ChartStage
-                            key={index}
-                            className='chart-stage'
-                            removeChart={removeChart}
-                            specs={chart} />
-                    ))}
-
-                </div>
+            </form>
+            <div className='charts'>
+                { charts.map((chart, index ) => (
+                    <ChartStage
+                        key={index}
+                        className='chart-stage'
+                        removeChart={removeChart}
+                        specs={chart} />
+                ))}
             </div>
         </div>
     );

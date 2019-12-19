@@ -11,7 +11,7 @@ function ChartStage ({ index, props, removeChart, specs }) {
         '&num_windows=' + specs.num_windows;
 
     return (
-        <div className='chart chart-{index}'>
+        <div className='chart'>
             <div className='chart-head'>
                 <label className='large'>{specs.device_id}</label>
                 <label>{specs.end_time}</label>
